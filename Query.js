@@ -56,22 +56,16 @@ export default class Query {
     handleChallengeResponse(msg) {
         console.log(`Received challenge response: ${msg.toString("hex")}`);
 
-        console.log(this.mainRequest);
-
         const REQUEST_WITH_CHALLENGE = Buffer.concat([
             this.mainRequest,
             Buffer.from(msg.toString("hex", 5), "hex"),
         ]);
-
-        console.log(REQUEST_WITH_CHALLENGE);
 
         this.send(REQUEST_WITH_CHALLENGE);
     }
 
     handlePlayersResponse(msg) {
         const reader = new Reader(msg, 5);
-
-        console.log(msg);
 
         const response = {};
 
