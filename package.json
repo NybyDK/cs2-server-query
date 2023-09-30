@@ -1,0 +1,12 @@
+{
+    "name": "cs2-server-query",
+    "version": "0.1.0",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "description": ""
+}
