@@ -67,11 +67,11 @@ export default class Query {
     handlePlayersResponse(msg) {
         const reader = new Reader(msg, 5);
 
-        const response = {};
+        const response = [];
 
         const playerCount = reader.readByte();
 
-        for (let i = 1; i < playerCount; i++) {
+        for (let i = 0; i < playerCount - 1; i++) {
             response[i] = {
                 index: reader.readByte(),
                 name: reader.readString(),
